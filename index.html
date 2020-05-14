@@ -4,50 +4,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>MoodyStats</title>
 </head>
 
 <body>
     <mobile>
-        <div class="mobile-status-bar">
-            <img src="https://i.imgur.com/XSqz2K4.png" alt="">
-        </div>
         <div class='mobile-container'>
-            <nav>StudScore</nav>
-            <div id="page-setting" class="page">
-                <h2>Insert Student ID and Name</h2>
-                <textarea placeholder="Insert name" rows="10"></textarea>
-                <button onclick="mockupClick('page-setting','page-ranking')">Save</button>
-            </div>
+            <div id="page-dashboard">
+                <div class="section">
+                    <div class="columns">
+                        <div class="column">
+                            <h1 class="has-text-centered" id="header">How's your feeling?</h1>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column has-text-centered"><emo>😁</emo></div>
+                        <div class="column has-text-centered"><emo>😲</emo></div>
+                        <div class="column has-text-centered"><emo>✨</emo></div>
+                    </div>
+                    <div class="columns">
+                        <div class="column has-text-centered"><emo>🙄</emo></div>
+                        <div class="column has-text-centered"><emo>😥</emo></div>
+                        <div class="column has-text-centered"><emo>😡</emo></div>
+                    </div>
+                </div>
 
-            <div id="page-ranking" class="page">
-                <h2>Ranking</h2>
-                <ul>
-                    <li>61070012 น้อยหน่า - 40</li>
-                    <li>61070036 อันนา - 20</li>
-                    <li>62070037 ราพันเซล - 5</li>
-                </ul>
-                <button onclick="mockupClick('page-ranking','page-findbyID')">Add Score</button>
+                <div class="section">
+                    <div class="columns">
+                        <div class="column has-text-centered"><p>Day</p></div>
+                        <div class="column has-text-centered"><p>Week</p></div>
+                        <div class="column has-text-centered"><p>Month</p></div>
+                        <div class="column has-text-centered"><p>Year</p></div>
+                    </div>
+                    <hr>
+                    <div class="section">
+                        <div class="columns">
+                            <div class="column has-text-centered"><h1>Happy:</h1><p>5 Times</p></div>
+                            <div class="column has-text-centered"><h1>Excited:</h1><p>5 Times</p></div>
+                            <div class="column has-text-centered"><h1>Learned:</h1><p>5 Times</p></div>
+                        </div>
+                        <div class="columns">
+                            <div class="column has-text-centered"><h1>Boring:</h1><p>5 Times</p></div>
+                            <div class="column has-text-centered"><h1>Sad:</h1><p>5 Times</p></div>
+                            <div class="column has-text-centered"><h1>Angry:</h1><p>5 Times</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <nav class="">
+                        <div class="columns">
+                            <div class="column has-text-centered"><i class="fas fa-home solid fa-2x"></i></div>
+                            <div class="column has-text-centered" onclick="mockupClick('page-dashboard','page-analytic')"><i class="fas fa-chart-pie fa-2x"></i></div>
+                            <div class="column has-text-centered" onclick="mockupClick('page-dashboard','page-analytic')"><i class="fas fa-user-alt fa-2x"></i></div>
+                        </div>
+                    </nav>
+                </div>
             </div>
+            <div id="page-analytic">
+                <div class="section">
+                    <div class="columns"><p>test</p></div>    
+                </div>
 
-            <div id="page-findbyID" class="page">
-                <h2>Find by ID</h2>
-                <input type="text">
-                <button>Go</button>
-            </div>
-
-            <div id="page-scoring" class="page">
-                <h2>Select Score</h2>
-                <h3>61070036 อันนา</h3>
-                <button class="score">5</button>
-                <button class="score">10</button>
-                <button class="score">20</button>
-                <button class="score">50</button>
             </div>
         </div>
     </mobile>
-
     <script>
+
         function mockupClick(pageToHide, pageToShow) {
             document.querySelector('#' + pageToHide).style.display = "none";
             document.querySelector('#' + pageToShow).style.display = "block";
